@@ -1,5 +1,4 @@
 import * as Label from '@radix-ui/react-label';
-import { Button } from "flowbite-react";
 
 export default function Page() {
   return (
@@ -28,7 +27,7 @@ export default function Page() {
         />
       </div>
 
-      <Button color='dark' fullSized>Acceder</Button>
+      <button>Acceder</button>
 
       <p>¿No tenes cuenta? <a href='#' className='underline'>Regístrate</a></p>
     </form>
