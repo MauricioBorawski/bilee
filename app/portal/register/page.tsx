@@ -18,6 +18,18 @@ export default function Page() {
       </div>
 
       <div>
+        <Label.Root htmlFor='name' className='font-bold'>
+          Nombre
+        </Label.Root>
+        <input
+          type="text"
+          id='name'
+          placeholder='John Doe'
+          className='rounded-lg border-billee-background-primary border-2 px-[16px] py-[12px] w-full mt-2'
+        />
+      </div>
+
+      <div>
         <Label.Root htmlFor='password' className='font-bold'>
           Password
         </Label.Root>
@@ -30,10 +42,10 @@ export default function Page() {
       </div>
 
       <Button variant='black'>
-        Acceder
+        Registrarse
       </Button>
 
-      <p>¿No tenes cuenta? <Link href='register' className='underline'>Regístrate</Link></p>
+      <p>¿Ya tenes cuenta? <Link href='login' className='underline'>Accede</Link></p>
     </form>
-  )
+  );
 }
