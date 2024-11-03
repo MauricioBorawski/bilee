@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthProvider } from "@/app/firebase/auth";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -23,7 +24,9 @@ export default function RootLayout({
       <body
         className={`${Inter.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
