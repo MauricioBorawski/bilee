@@ -1,4 +1,4 @@
-import {getAuth, createUserWithEmailAndPassword, signOut} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 import {executePromise} from "./api";
 import app from "../firebase/config";
 
@@ -8,7 +8,11 @@ export function signUpWithEmailAndPassword(email: string, password: string ) {
    return executePromise(createUserWithEmailAndPassword(auth, email, password));
 }
 
-export function SignOut() {
+export function logInWithEmailAndPassword(email: string, password: string) {
+    return executePromise(signInWithEmailAndPassword(auth, email, password));
+}
+
+export function logOut() {
     return executePromise(signOut(auth)).then(() => {
         return true;
     })
