@@ -1,5 +1,6 @@
 'use client';
 import * as Avatar from "@radix-ui/react-avatar";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {AppAuthGuard} from "./AppAuthGuard";
 
 export default function Home() {
@@ -10,12 +11,23 @@ export default function Home() {
                 <header
                     className="w-full flex flex-row items-center justify-between">
                     <h1 className="text-5xl font-bold">Billee</h1>
-                    <Avatar.Root
-                        className="bg-gray-800 text-billee-background-secondary p-2 rounded-full">
-                        <Avatar.Fallback>
-                            M
-                        </Avatar.Fallback>
-                    </Avatar.Root>
+                    <DropdownMenu.Root>
+                        <DropdownMenu.Trigger>
+                            <Avatar.Root
+                                className="inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full bg-gray-800 align-middle text-billee-background-secondary">
+                                <Avatar.Fallback>
+                                    M
+                                </Avatar.Fallback>
+                            </Avatar.Root>
+                        </DropdownMenu.Trigger>
+                        <DropdownMenu.Portal>
+                            <DropdownMenu.Content className="bg-billee-background-secondary p-2 rounded-lg">
+                                <DropdownMenu.Item>Perfil</DropdownMenu.Item>
+                                <DropdownMenu.Item>Cerrar
+                                    session</DropdownMenu.Item>
+                            </DropdownMenu.Content>
+                        </DropdownMenu.Portal>
+                    </DropdownMenu.Root>
                 </header>
                 <main
                     className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
